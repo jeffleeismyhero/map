@@ -67,6 +67,8 @@ export class Marker extends BaseMapDirective implements OnInit {
           this.mapObject.setPosition(this.objectOptions['geoFallbackPosition'] || new google.maps.LatLng(0, 0));
         }
       ));
+    } else if (typeof this['position'] === 'object') {
+      this.mapObject.setPosition(this['position'] || new google.maps.LatLng(0, 0));
     }
   }
 }
